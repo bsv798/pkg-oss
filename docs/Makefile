@@ -7,6 +7,7 @@ CONTRIB:=	$(abspath $(CONTRIB))
 XSLS?=	$(CONTRIB)/xslscript/xslscript.pl
 
 PACKAGES=	nginx							\
+		nginx-module-ajp				\
 		nginx-module-auth-spnego				\
 		nginx-module-brotli					\
 		nginx-module-encrypted-session				\

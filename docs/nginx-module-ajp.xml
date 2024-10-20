@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!DOCTYPE change_log SYSTEM "changes.dtd" >
+
+
+<change_log title="nginx_module_ajp">
+
+
+<changes apply="nginx-module-ajp" ver="0.3.0" rev="1" basever="1.26.2"
+         date="2024-10-20" time="11:32:52 +0000"
+         packager="Sergey Bizin &lt;bsv798@gmail.com&gt;">
+
+<change>
+<para>
+Initial release of ajp module for nginx
+</para>
+</change>
+
+</changes>
+
+
+</change_log>
