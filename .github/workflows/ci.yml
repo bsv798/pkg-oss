@@ -39,7 +39,7 @@ jobs:
             ;;
             workflow_dispatch)
               # use all modules to test against
-              COMMON_MODULES="base auth-spnego brotli encrypted-session fips-check geoip2 headers-more image-filter lua ndk njs opentracing otel passenger perl rtmp set-misc subs-filter xslt"
+              COMMON_MODULES="base ajp auth-spnego brotli encrypted-session fips-check geoip2 headers-more image-filter lua ndk njs opentracing otel passenger perl rtmp set-misc subs-filter xslt"
               ADD_MODULES="geoip"
             ;;
           esac
