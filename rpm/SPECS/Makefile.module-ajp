@@ -1,0 +1,42 @@
+MODULES+=	ajp
+
+MODULE_SUMMARY_ajp=	3rd-party AJP dynamic module
+
+include $(CONTRIB)/src/nginx_ajp_module/version
+
+MODULE_VERSION_ajp=	$(NGINX_AJP_MODULE_VERSION)
+MODULE_RELEASE_ajp=	1
+
+MODULE_VERSION_PREFIX_ajp=$(MODULE_TARGET_PREFIX)
+
+MODULE_SOURCES_ajp=	nginx_ajp_module-$(NGINX_AJP_MODULE_GITHASH).tar.xz
+
+MODULE_PATCHES_ajp=
+
+MODULE_CONFARGS_ajp=	--add-dynamic-module=$(MODSRC_PREFIX)nginx_ajp_module-$(NGINX_AJP_MODULE_GITHASH)
+
+.deps-module-ajp:
+	cd $(CONTRIB) && make .sum-nginx_ajp_module
+	touch $@
+
+define MODULE_DEFINITIONS_ajp
+endef
+export MODULE_DEFINITIONS_ajp
+
+define MODULE_POST_ajp
+cat <<BANNER
+----------------------------------------------------------------------
+
+The $(MODULE_SUMMARY_ajp) for $(MODULE_SUMMARY_PREFIX) has been installed.
+To enable this module, add the following to /etc/nginx/nginx.conf
+and reload nginx:
+
+    load_module modules/ngx_http_ajp_module.so;
+
+Please refer to the module documentation for further details:
+https://github.com/msva/nginx_ajp_module
+
+----------------------------------------------------------------------
+BANNER
+endef
+export MODULE_POST_ajp
